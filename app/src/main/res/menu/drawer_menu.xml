@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homed"
+
+        android:title="ہوم "
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/aboutd"
+        android:title="کچھ ہمارے بارے میں"
+
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/booksd"
+        android:title="کتابیں"
+
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/tawund"
+        android:title="تعاون"
+
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/rabtad"
+        android:title="رابطہ"
+
+        app:showAsAction="always" />
+</menu>

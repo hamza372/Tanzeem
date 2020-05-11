@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/download"
+        android:icon="@drawable/ic_file_download_black_24dp"
+        android:title="اپڈیٹس"
+        app:labelVisibilityMode="labeled"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/topic"
+        android:icon="@drawable/icon"
+        android:title="کیٹگریز"
+        app:labelVisibilityMode="labeled"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/bookmark"
+        android:icon="@drawable/forma_1_copy_4"
+        android:title="پسندیدہ"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/kutub"
+        android:icon="@drawable/forma_1"
+        android:title="کتابیںٰ"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/fist_page"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="صفہ اول"
+        app:showAsAction="always" />
+
+</menu>
