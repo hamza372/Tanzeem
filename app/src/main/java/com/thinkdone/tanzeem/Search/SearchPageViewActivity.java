@@ -123,7 +123,7 @@ public class SearchPageViewActivity extends AppCompatActivity {
         webSettings = pageWebView.getSettings();
         if(pref.getFloat(Constants.FONT,-1) != -1) {
             webSettings.setTextZoom((int) pref.getFloat(Constants.FONT,webSettings.getDefaultFontSize()));
-            bookname.setTextSize(((int) pref.getFloat(Constants.FONT,webSettings.getDefaultFontSize()) + 150)/10);
+           // bookname.setTextSize(((int) pref.getFloat(Constants.FONT,webSettings.getDefaultFontSize()) + 150)/10);
             babNameTv.setTextSize(((int) pref.getFloat(Constants.FONT,webSettings.getDefaultFontSize()) + 100)/10);
         }
 
@@ -212,7 +212,7 @@ public class SearchPageViewActivity extends AppCompatActivity {
                     if (!bookmarkDBHelper.isPageFavourite(pageDataModel.getPage_id())) {
                         //Log.d("tryFav",bookDataModel.getBookNameEnglish());
                         bookmarkDBHelper.addPage(pageDataModel.getPage_id(), pageDataModel.getPage_no(), pageDataModel.getBookName(),pageDataModel.getBookId(),pageDataModel.getPageBaabId(),pageDataModel.getBookName());
-                        Toast.makeText(SearchPageViewActivity.this, "Added to favourites "+pageDataModel.getPageBaabId(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SearchPageViewActivity.this, "Added to favourites ", Toast.LENGTH_SHORT).show();
                         fav.setImageResource(R.drawable.ic_star_black_24dp);
                     } else {
                         fav.setImageResource(R.drawable.ic_star_border_white_24dp);
@@ -412,7 +412,7 @@ public class SearchPageViewActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
         {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            getWindow().setStatusBarColor(Color.parseColor("#292118"));
+            getWindow().setStatusBarColor(Color.parseColor("#474039"));
         }
         ImageView choser = findViewById(R.id.imageView2);
         choser.setVisibility(GONE);
@@ -3251,7 +3251,7 @@ public class SearchPageViewActivity extends AppCompatActivity {
                 pref.edit().putFloat(Constants.FONT,newfontsize).apply();
                 //   webSettings.setDefaultFontSize((int) newfontsize);
                 webSettings.setTextZoom((int) newfontsize);
-                bookname.setTextSize((newfontsize + 150)/10);
+          //      bookname.setTextSize((newfontsize + 150)/10);
                 babNameTv.setTextSize((newfontsize + 100)/10);
 
             }

@@ -3,13 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/download"
-        android:icon="@drawable/ic_file_download_black_24dp"
-        android:title="اپڈیٹس"
-        app:labelVisibilityMode="labeled"
-        app:showAsAction="always" />
-
-    <item
         android:id="@+id/topic"
         android:icon="@drawable/icon"
         android:title="کیٹگریز"

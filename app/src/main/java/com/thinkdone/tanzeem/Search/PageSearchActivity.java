@@ -276,11 +276,11 @@ public class PageSearchActivity extends AppCompatActivity {
                 item.setTitle(s);
             }
         }
-        drawer.setStatusBarBackgroundColor(Color.parseColor("#292118"));
+        drawer.setStatusBarBackgroundColor(Color.parseColor("#474039"));
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            getWindow().setStatusBarColor(Color.parseColor("#292118"));
+            getWindow().setStatusBarColor(Color.parseColor("#474039"));
         }
 
         final ImageView layoutd = findViewById(R.id.imageView7);

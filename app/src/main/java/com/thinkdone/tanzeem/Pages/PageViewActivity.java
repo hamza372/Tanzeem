@@ -120,7 +120,7 @@ public class PageViewActivity extends AppCompatActivity {
         webSettings = pageWebView.getSettings();
         if(pref.getFloat(Constants.FONT,-1) != -1) {
             webSettings.setTextZoom((int) pref.getFloat(Constants.FONT,webSettings.getDefaultFontSize()));
-            bookname.setTextSize(((int) pref.getFloat(Constants.FONT,webSettings.getDefaultFontSize()) + 150)/10);
+           // bookname.setTextSize(((int) pref.getFloat(Constants.FONT,webSettings.getDefaultFontSize()) + 150)/10);
             babNameTv.setTextSize(((int) pref.getFloat(Constants.FONT,webSettings.getDefaultFontSize()) + 100)/10);
         }
 
@@ -231,7 +231,7 @@ public class PageViewActivity extends AppCompatActivity {
                     if (!bookmarkDBHelper.isPageFavourite(pageDataModel.getPage_id())) {
                         //Log.d("tryFav",bookDataModel.getBookNameEnglish());
                         bookmarkDBHelper.addPage(pageDataModel.getPage_id(), pageDataModel.getPage_no(), pageDataModel.getBookName(),pageDataModel.getBookId(),babListId.get(currentlySelectedBab),pageDataModel.getBookName());
-                        Toast.makeText(PageViewActivity.this, "Added to favourites "+babListId.get(currentlySelectedBab), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PageViewActivity.this, "Added to favourites ", Toast.LENGTH_SHORT).show();
                         fav.setImageResource(R.drawable.ic_star_black_24dp);
                     } else {
                         fav.setImageResource(R.drawable.ic_star_border_white_24dp);
@@ -245,7 +245,27 @@ public class PageViewActivity extends AppCompatActivity {
         });
 
         loadBabs();
-        totalPagesTV.setText(getTotalBookPages(pageDataModel.getBookId())+"");
+        //totalPagesTV.setText(getTotalBookPages(pageDataModel.getBookId())+"");
+        new AsyncTask<Void,Void,Void>(){
+            String totalText = null;
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                totalText = "";
+            }
+
+            @Override
+            protected Void doInBackground(Void... voids) {
+                totalText= getTotalBookPages(pageDataModel.getBookId())+"";
+                return null;
+            }
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
+                totalPagesTV.setText(totalText);
+            }
+
+        }.execute();
 
 
         //TODO change bab spinner code
@@ -448,7 +468,7 @@ public class PageViewActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
         {
              getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-             getWindow().setStatusBarColor(Color.parseColor("#292118"));
+             getWindow().setStatusBarColor(Color.parseColor("#474039"));
         }
         ImageView choser = findViewById(R.id.imageView2);
         choser.setOnClickListener(new View.OnClickListener() {
@@ -588,7 +608,27 @@ public class PageViewActivity extends AppCompatActivity {
         babNameTv.setText(baabsDataModels.get(babSpinner.getSelectedItemPosition()));
         currentlySelectedBab = babSpinner.getSelectedItemPosition();
         loadBabsFromBooks(babSpinner.getSelectedItemPosition());
-        totalPagesTV.setText(getTotalBookPages(pageDataModel.getBookId())+"");
+        new AsyncTask<Void,Void,Void>(){
+            String totalText = null;
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                totalText = "";
+            }
+
+            @Override
+            protected Void doInBackground(Void... voids) {
+                totalText= getTotalBookPages(pageDataModel.getBookId())+"";
+                return null;
+            }
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
+                totalPagesTV.setText(totalText);
+            }
+
+        }.execute();
+
     }
 
 
@@ -3171,7 +3211,7 @@ public class PageViewActivity extends AppCompatActivity {
                 //Log.d("tryFontSize",newfontsize+"");
              //   webSettings.setDefaultFontSize((int) newfontsize);
                 webSettings.setTextZoom((int) newfontsize);
-                bookname.setTextSize((newfontsize + 150)/10);
+     //           bookname.setTextSize((newfontsize + 150)/10);
                 babNameTv.setTextSize((newfontsize + 100)/10);
 
             }

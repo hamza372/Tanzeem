@@ -65,11 +65,7 @@ public class BookMarksActivity extends AppCompatActivity {
                     startActivity(new Intent(activity, CategoriesActivity.class));
                     overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                     break;
-                case R.id.download:
-                    Intent intent = new Intent(activity, UpdatesActivity.class);
-                    startActivity(intent);
-                    overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-                    break;
+
 
             }
             return  true;
@@ -89,7 +85,7 @@ public class BookMarksActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         Menu menu = navigation.getMenu();
-        MenuItem menuItem = menu.getItem(2);
+        MenuItem menuItem = menu.getItem(1);
         menuItem.setChecked(true);
 
         recyclerView = findViewById(R.id.bmrecycler);
@@ -203,12 +199,12 @@ public class BookMarksActivity extends AppCompatActivity {
                 item.setTitle(s);
             }
         }
-        drawer.setStatusBarBackgroundColor(Color.parseColor("#292118"));
+        drawer.setStatusBarBackgroundColor(Color.parseColor("#474039"));
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            getWindow().setStatusBarColor(Color.parseColor("#292118"));
+            getWindow().setStatusBarColor(Color.parseColor("#474039"));
         }
 
     }

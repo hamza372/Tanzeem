@@ -20,10 +20,10 @@ public class Splash_Screen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash__screen);
         image = findViewById(R.id.imageView17);
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-//            getWindow().setStatusBarColor(Color.parseColor("#292118"));
-//        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+           // getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().setStatusBarColor(Color.parseColor("#474039"));
+        }
 
         new Handler().postDelayed(new Runnable() {
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)

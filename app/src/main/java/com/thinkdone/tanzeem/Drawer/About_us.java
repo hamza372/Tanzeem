@@ -159,7 +159,7 @@ public class About_us extends AppCompatActivity {
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
         {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            getWindow().setStatusBarColor(Color.parseColor("#292118"));
+            getWindow().setStatusBarColor(Color.parseColor("#474039"));
         }
 
     }

@@ -89,11 +89,7 @@ public class UpdatesActivity extends AppCompatActivity {
                     startActivity(new Intent(activity, CategoriesActivity.class));
                     overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                     break;
-                case R.id.download:
-                    Intent intent = new Intent(activity, UpdatesActivity.class);
-                    startActivity(intent);
-                    overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-                    break;
+
 
             }
             return  true;

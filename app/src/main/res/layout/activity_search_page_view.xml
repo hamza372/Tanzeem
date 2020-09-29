@@ -337,10 +337,10 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="6dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="6dp">
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="5dp">
 
             <Spinner
                 android:id="@+id/spinner2"
@@ -362,7 +362,7 @@
                 android:letterSpacing="0.01"
                 android:lineSpacingExtra="20sp"
                 android:textColor="#17202f"
-                android:textSize="13.3sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/spinner2"
